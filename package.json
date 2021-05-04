@@ -17,11 +17,17 @@
     "compile": "hardhat compile",
     "test": "hardhat test",
     "clean": "rm -rf dist/",
-    "lint": "eslint . --ext .ts && solhint 'contracts/**/*.sol'"
+    "lint": "eslint . --ext .ts && solhint 'contracts/**/*.sol'",
+    "hardhat:main": "hardhat --network mainnet",
+    "hardhat:ropsten": "hardhat --network ropsten",
+    "hardhat:rinkeby": "hardhat --network rinkeby",
+    "hardhat:goerli": "hardhat --network goerli",
+    "hardhat:kovan": "hardhat --network kovan"
   },
   "dependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "dotenv": "^8.2.0",
     "hardhat": "^2.1.2",
     "hardhat-typechain": "^0.3.5"
   },

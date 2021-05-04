@@ -1,5 +1,10 @@
 import path from 'path';
 import { HardhatUserConfig } from 'hardhat/config';
+
+import '@nomiclabs/hardhat-ethers';
+import '@nomiclabs/hardhat-waffle';
+import 'hardhat-typechain';
+
 import {
   DEFAULT_GAS_PRICE,
   DEFAULT_BLOCK_GAS_LIMIT,
@@ -8,12 +13,10 @@ import {
   getNetworkConfig,
   EEthNetwork,
   EHttpProvider,
+  EHardfork,
 } from './helper';
 
-import '@nomiclabs/hardhat-ethers';
-import '@nomiclabs/hardhat-waffle';
-import 'hardhat-typechain';
-
+require('dotenv').config();
 const MNEMONIC = process.env.MNEMONIC || '';
 const INFURA_KEY = process.env.INFURA || '';
 // const ALCHEMY_KEY = process.env.ALCHEMY || '';
@@ -30,6 +33,10 @@ const config: HardhatUserConfig = {
       gas: DEFAULT_BLOCK_GAS_LIMIT,
       gasPrice: DEFAULT_GAS_PRICE,
       chainId: HARDHATEVM_CHAINID,
+      accounts: {
+        mnemonic: MNEMONIC,
+        path: DEFAULT_DERIVEPATH,
+      },
     },
     mainnet: {
       ...getNetworkConfig(EEthNetwork.mainnet, EHttpProvider.infura, { url: '', apiKey: INFURA_KEY }),
@@ -72,10 +79,10 @@ const config: HardhatUserConfig = {
   solidity: {
     compilers: [
       {
-        version: '0.7.5',
+        version: '0.8.0',
         settings: {
           optimizer: { enabled: true, runs: 200 },
-          evmVersion: 'istanbul',
+          evmVersion: EHardfork.berlin,
         },
       },
     ],

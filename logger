@@ -1,0 +1,8 @@
+[hardhat] deploy contract<Foo> at 0xcCaefD7CD867cF4CD7368C326bB518a0d762a9AB
+[hardhat] print balance: 9999907162104000000000 | account balance: 9999999332280000000000
+[rinkeby] deploy contract<Foo> at 0xd0e42f4E93efE19eCbC416611918FfA194f64096
+[rinkeby] print balance: 18749251185000000000 | account balance: 18749251185000000000
+[goerli] deploy contract<Foo> at 0xd0e42f4E93efE19eCbC416611918FfA194f64096
+[goerli] print balance: 48492180000000000 | account balance: 48492180000000000
+[kovan] deploy contract<Foo> at 0xcCaefD7CD867cF4CD7368C326bB518a0d762a9AB
+[kovan] print balance: 1999332280000000000 | account balance: 1999332280000000000
