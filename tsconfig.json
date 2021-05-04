@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "dist"
+  },
+  "include": [
+    "./tasks",
+    "./tests",
+    "./scripts"
+  ],
+  "files": ["./hardhat.config.ts"]
+}
